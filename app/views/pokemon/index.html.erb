@@ -1,0 +1,32 @@
+<div class="row" ng-controller="pokemonAppCtrl">
+  <div class="search col-sm-3">
+    <div class="form-group has-feedback">
+      <label class="control-label" for="inputSuccess2">Pokemon Search</label>
+      <input type="text" class="form-control" ng-model="query" />
+      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+    </div>
+  </div>
+  <div class="list col-sm-2">
+    <table>
+      <thead>
+        <tr>Pokemon List</tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="pokemon in PokemonList | filter:query ">
+          <td>{{ pokemon.name }}</td>
+      </tbody>
+    </table>
+  </div>
+  <div class="profile col-sm-6">
+    <img style="width: 250px" ng-src="{{ Pokemon.img }}" />
+    <h2>Name: {{ Pokemon.name }}</h2>
+    <h4>Pokedex: {{ Pokemon.pkdx_id }}</h4>
+    <h4>Height: {{ Pokemon.height }}</h4>
+    <h4>Weight: {{ Pokemon.weight }}</h4>
+    <h4>Attack: {{ Pokemon.attack }}</h4>
+    <h4>Defense: {{ Pokemon.defense }}</h4>
+    <h4>Speed: {{ Pokemon.speed }}</h4>
+    <h4>HP: {{ Pokemon.hp }}</h4>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
