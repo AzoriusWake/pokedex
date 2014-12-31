@@ -7,5 +7,12 @@ factory('pokemonAPIservice', function($http) {
       url: '/pokemon/endpoint'
     });
   }
+  pokemonAPI.getProfile = function() {
+    return $http({
+      method: 'get',
+      url: '/pokemon/profile',
+      data: { id: "Charizard"}
+    });
+  }
   return pokemonAPI;
 });
