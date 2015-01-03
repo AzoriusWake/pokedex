@@ -7,13 +7,15 @@ class PokemonController < ApplicationController
     render json: pokemons
   end
   def profile
-    pokemon = if params["id"]
-                pokemon.find_by(name: params["id"])
+    pokemon = if params["name"]
+                Pokemon.find_by(name: params["name"])
               else
                 Pokemon.first
               end
     render json: pokemon
-    # pokemon = Pokemon.first
-    # render json: pokemon
+  end
+  def show
+    pokemon = Pokemon.find(params[:id])
+    render json: pokemon
   end
 end

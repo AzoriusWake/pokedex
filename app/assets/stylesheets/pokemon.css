@@ -10,12 +10,22 @@
 
 .profile {
   border: 1px solid black;
+  text-align: center;
 }
 
-.pokemon-title {
+.picture {
+  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 8px solid rgba(35, 82, 124, .7);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
 
 .pokemon-name {
+  text-align: left;
+  margin: 2px 20px;
 }
 
 .pokemon-name:hover {
@@ -24,4 +34,5 @@
 }
 
 .pokemon-profile {
+
 }

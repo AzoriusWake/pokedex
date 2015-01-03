@@ -16,39 +16,41 @@
   </div>
 </div>
 <div class="row" ng-controller="pokemonAppCtrl">
-  <div class="search col-sm-3">
-    <div class="form-group has-feedback">
-      <label class="control-label" for="inputSuccess2">Pokemon Search</label>
+  <div class="col-sm-1"></div>
+
+  <div class="search col-sm-5">
+
+    <div class="form-group">
+      <label class="control-label" for="inputSuccess2" style="font-size: 20px; text-decoration: underline; margin-top: 4px;">Pokemon Search</label>
       <input type="text" class="form-control" ng-model="query" />
       <span class="glyphicon glyphicon-search form-control-feedback"></span>
     </div>
+
+    <div class="list" ng-repeat="columns in PokemonList">
+      <div class="col-sm-4" ng-repeat="pokemon in columns | filter:query ">
+        <div class="pokemon-name" ng-click="updateProfile()"><a ng-href="/pokemon/{{pokemon.id}}" />{{ pokemon.name }}</div>
+      </div>
+    </div>
+
   </div>
-  <div class="list col-sm-2">
-    <table>
-      <thead>
-        <tr>
-          <div class="pokemon-list">Pokemon List</div>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="pokemon in PokemonList | filter:query ">
-          <td>
-            <div class="pokemon-name" ng-click="getProfile()"><a href="/pokemon/profile" />{{ pokemon.name }}</div>
-          </td>
-      </tbody>
-    </table>
-  </div>
-  <div class="profile col-sm-6">
+
+  <div class="profile col-sm-5 container-fluid well">
     <div class="pokemon-profile">
-      <img style="width: 250px" ng-src="{{ Pokemon.img }}" />
-      <h2>Name: {{ Pokemon.name }}</h2>
-      <h4>Pokedex: {{ Pokemon.pkdx_id }}</h4>
-      <h4>Height: {{ Pokemon.height }}</h4>
-      <h4>Weight: {{ Pokemon.weight }}</h4>
-      <h4>Attack: {{ Pokemon.attack }}</h4>
-      <h4>Defense: {{ Pokemon.defense }}</h4>
-      <h4>Speed: {{ Pokemon.speed }}</h4>
-      <h4>HP: {{ Pokemon.hp }}</h4>
+      <h2>{{ Pokemon.name }}</h2>
+      <img class="picture" ng-src="{{ Pokemon.img }}" />
+      <div class="col-sm-2"></div>
+      <div class="col-sm-4">
+        <h4>Pokedex: {{ Pokemon.pkdx_id }}</h4>
+        <h4>Height: {{ Pokemon.height }}</h4>
+        <h4>Weight: {{ Pokemon.weight }}</h4>
+        <h4>Attack: {{ Pokemon.attack }}</h4>
+      </div>
+      <div class="col-sm-4">
+        <h4>Defense: {{ Pokemon.defense }}</h4>
+        <h4>Speed: {{ Pokemon.speed }}</h4>
+        <h4>HP: {{ Pokemon.hp }}</h4>
+      </div>
+      <div class="col-sm-2"></div>
     </div>
   </div>
   <div class="col-sm-1"></div>

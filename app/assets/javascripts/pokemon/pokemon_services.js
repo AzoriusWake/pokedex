@@ -10,8 +10,7 @@ factory('pokemonAPIservice', function($http) {
   pokemonAPI.getProfile = function() {
     return $http({
       method: 'get',
-      url: '/pokemon/profile',
-      data: { id: "Charizard"}
+      url: '/pokemon/profile'
     });
   }
   return pokemonAPI;

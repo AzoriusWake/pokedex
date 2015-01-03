@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'pokemon#index'
   get 'pokemon/endpoint' => 'pokemon#endpoint'
   get 'pokemon/profile' => 'pokemon#profile'
+  get 'pokemon/:id' => 'pokemon#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
