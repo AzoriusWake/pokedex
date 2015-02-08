@@ -10,7 +10,7 @@ require 'httparty'
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 counter = 1
-151.times do
+718.times do
   url = "http://pokeapi.co/api/v1/pokemon/#{counter}/"
   response = HTTParty.get(url)
   Pokemon.create( name:     response["name"],
